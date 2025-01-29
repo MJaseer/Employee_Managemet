@@ -1,0 +1,36 @@
+<section class="screen-size">
+  <div class="outer-bg">
+    <!-- <div class="inner-div">
+      <div class="inner-bg"> -->
+        <form class="flex flex-col p-3" [formGroup]="loginForm" (submit)="login()">
+          <span class="text-3xl text-center text-white">Login</span>
+          <div class="flex border rounded flex-col p-3 gap-1 w-fit justify-center items-center">
+            <div class="flex flex-col w-fit">
+              <input class="rounded bg-white px-2 h-10 border-0" type="text" placeholder="User Name"
+                formControlName="userName">
+              <span class="text-red-600 font-bold" *ngIf="loginForm.get('userName')?.invalid &&
+              (loginForm.get('userName')?.dirty || loginForm.get('userName')?.touched ||
+               isSubmitted)">
+                <span class="text-red-600 font-bold" *ngIf="loginForm.get('userName')?.invalid &&
+              (loginForm.get('userName')?.dirty || loginForm.get('userName')?.touched ||
+               isSubmitted)"> User name is required</span>
+              </span>
+            </div>
+            <div class="flex flex-col w-fit">
+              <input class="rounded bg-white px-2 h-10 border-0" type="text" placeholder="Password"
+                formControlName="password">
+              <span class="text-red-600 font-bold" *ngIf="loginForm.get('password')?.invalid &&
+            (loginForm.get('password')?.dirty || loginForm.get('password')?.touched ||
+             isSubmitted)">
+                <span class="text-red-600 font-bold" *ngIf="loginForm.get('password')?.invalid &&
+            (loginForm.get('password')?.dirty || loginForm.get('password')?.touched ||
+             isSubmitted)"> Password is required</span>
+              </span>
+            </div>
+            <input type="submit" placeholder="Submit" />
+          </div>
+        </form>
+      <!-- </div>
+    </div> -->
+  </div>
+</section>

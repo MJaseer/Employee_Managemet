@@ -1,0 +1,47 @@
+<h1>Employee Table</h1>
+
+<input type="text" id="searchName" placeholder="Search by Name">
+<input type="text" id="searchContact" placeholder="Search by Contact">
+<input type="text" id="searchEmail" placeholder="Search by Email">
+<input type="text" id="searchAddress" placeholder="Search by Address">
+
+<button id="addEmployeeBtn">Add Employee</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        <span class="block">Name</span>
+        <input type="text" placeholder="search" name="searchName" [(ngModel)]="searchValue" (keyup)="search('name')">
+      </th>
+      <th>
+        <span class="block">Phone</span>
+        <input type="text" placeholder="search" name="searchId" [(ngModel)]="searchValue" (keyup)="search('phone')">
+      </th>
+      <th>
+        <span class="block">Email</span>
+        <input type="text" placeholder="search" name="searchEmail" [(ngModel)]="searchValue" (keyup)="search('email')">
+      </th>
+      <th>
+        <span class="block">Address</span>
+        <input type="text" placeholder="search" name="searchAddress" [(ngModel)]="searchValue"
+          (keyup)="search('address')">
+      </th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="employeeTableBody">
+    <tr *ngFor="let item of employees | search : searchValue : searchProperty">
+      <td> {{item.name}}</td>
+      <td> {{item.date}}</td>
+      <td>employee1.com</td>
+      <td>Address 1</td>
+      <td><button class="deleteBtn">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="pagination">
+  <button id="prevPage">Previous</button>
+  <button id="nextPage">Next</button>
+</div>
