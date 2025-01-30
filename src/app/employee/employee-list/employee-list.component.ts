@@ -4,6 +4,7 @@ import { Employee } from '../../interfaces/employee';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SearchPipe } from '../../search.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -14,6 +15,8 @@ import { SearchPipe } from '../../search.pipe';
 export class EmployeeListComponent implements OnInit{
 
   private httpService = inject(HttpService)
+  router = inject(Router)
+
   employees:Employee[] = [{
     date:'',
     name:'',
